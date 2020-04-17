@@ -10,7 +10,6 @@ var eleID_a_text_missatge = document.getElementById("text_barra_missatges");
 
 function validaQueNoEsBuit(cadenaAValidar) {
   //var x, text;
-// alert("hola");
   // Get the value of the input field with id="numb"
   //x = document.getElementById("numb").value;
 
