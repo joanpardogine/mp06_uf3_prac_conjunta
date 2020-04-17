@@ -57,7 +57,7 @@ function crearHospital() {
           "<h1><b>" + 
           nom + 
           "</b></h1>";
-    
+    debugger;
       hospital = new Hospital(nom, maximPacients);
       eleID_divHospital.classList.toggle("d-none");
       var cadenaFilaPacient_1,cadenaFilaPacient_2,cadenaFilaPacient_3;
