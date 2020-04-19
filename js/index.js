@@ -1,5 +1,8 @@
  hospital = null;
 // var pacients = [];
+
+/* Creació de una matriu (Array) anomenada llistaMalalties i incialitzada amb totes les malalties obtingudes de la
+** web de l'Hospital de la Vall d'Hebron https://hospital.vallhebron.com/ca/que-podem-fer-tu/malalties/llista-de-malalties */
 var llistaMalalties =['Alzheimer','Anells vasculars','Atrèsia pulmonar amb comunicació intraventricular',
                       'Bacteria Gonorrea','Cadena de ADN','Canal auriculoventricular','Canal auriculoventricular parcial',
                       'Càncer','Càncer de mama','Cardiopatia familiar','Coartació de l’aorta i hipoplàsia de l’arc aòrtic',
@@ -25,6 +28,7 @@ var llistaMalalties =['Alzheimer','Anells vasculars','Atrèsia pulmonar amb comu
                       'Tumor extraocular en la infància (Rabdomiosarcoma)',
                       'Tumor intraocular en la infància (Retinoblastoma)','Tumors d’òrbita','Ventricle únic',
                       'Virus del papil·loma humà (VPH)'];
+
 var eleID_h1Titol = document.getElementById("h1TitolHospital");
 var eleID_nomHospital = document.getElementById("nomHospital");
 var eleID_divPacients = document.getElementById("divPacients");
@@ -33,6 +37,12 @@ var eleID_divHospital = document.getElementById("divHospital");
 var eleID_barra_missatges = document.getElementById("barra_missatges");
 var eleID_a_text_missatge = document.getElementById("text_barra_missatges");
 
+
+function ompleSelectLlistaDeMalalties() {
+ /* Creació d'una funció per crear un desplegable amb totes les malalties de llistaMalalties */
+ 
+}
+ 
 function validaQueNoEsBuit(cadenaAValidar) {
   //var x, text;
   // Get the value of the input field with id="numb"
