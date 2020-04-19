@@ -90,12 +90,17 @@ function crearHospital() {
   if (nom !== "" && maximPacients > 0) {
       eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" + 
           "<h1><b>" + 
-          nom + 
+          nom + crearHospital
           "</b></h1>";
     debugger;
       hospital = new Hospital(nom, maximPacients);
       eleID_divHospital.classList.toggle("d-none");
       var cadenaFilaPacient_1,cadenaFilaPacient_2,cadenaFilaPacient_3;
+   /* Creació de tres cadenes cadenaFilaPacient_1, cadenaFilaPacient_2 i cadenaFilaPacient_3
+   ** per faciliar la creació dels <div class="row"> que es crea per a cada pacient.
+   ** posteriorment afegeiré un objecte llisa desplegable, que l'ompliré amb tots els elements
+   ** de la matriu que acabo de crear llistaMalalties
+   ** */
       cadenaFilaPacient_1 = '<div class="row">' +
                             '<div class="col mb-3">' +
                             '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
