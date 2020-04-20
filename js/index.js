@@ -101,6 +101,28 @@ function crearHospital() {
    ** posteriorment afegeiré un objecte llisa desplegable, que l'ompliré amb tots els elements
    ** de la matriu que acabo de crear llistaMalalties
    ** */
+   var objSelect;
+   
+   
+   
+   
+   /*
+<select id="malaltiaPacient
+0">
+    <option value="malatia0">Alzheimer</option>
+    <option value="malatia1">Anells vasculars'</option>
+    ....
+    <option value="malatia52">Virus del papil·loma humà (VPH)'</option>
+</select>
+   */
+   
+   objSelect='">';
+    for (var indexMalaltia=0; indexMalaltia<length.llistaMalalties; indexMalaltia++) {
+        objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>'";  
+    }
+    objSelect+='</select>';
+   
+   
       cadenaFilaPacient_1 = '<div class="row">' +
                             '<div class="col mb-3">' +
                             '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
@@ -110,7 +132,7 @@ function crearHospital() {
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '  <div class="col mb-3">' +
                             '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
-                            '    <input type="text" id="malaltia';
+                            '    <select id="malaltia';
       cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '</div> <!-- <div class="row"> -->';
