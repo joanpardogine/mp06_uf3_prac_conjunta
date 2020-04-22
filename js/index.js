@@ -1,4 +1,32 @@
- hospital = null;
+$(document).ready(function() {
+    // Activem el ToolTip de Boostrap
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+
+    $("#invertirColors").click(function() {
+      $("body").toggleClass("bg-dark text-white");
+      $("#barraAccesibilitat").toggleClass("bg-white text-dark");
+    });
+
+    $("#augmentarLletra").click(function() {
+      $("body").css("font-size", parseFloat($("body").css("font-size")) * 1.2);
+      $("h1").css("font-size", parseFloat($("h1").css("font-size")) * 1.2);
+      $("h2").css("font-size", parseFloat($("h1").css("font-size")) * 1.2);
+      $(".form-control").css("font-size", parseFloat($(".form-control").css("font-size")) * 1.2);
+      $(".btn").css("font-size", parseFloat($(".btn").css("font-size")) * 1.2);
+      $(".navbar-brand").css("font-size", parseFloat($(".navbar-brand").css("font-size")) * 1.2);
+    });
+
+    $("#reduirLletra").click(function() {
+      $("body").css("font-size", parseFloat($("body").css("font-size")) / 1.2);
+      $("h1").css("font-size", parseFloat($("h1").css("font-size")) / 1.2);
+      $("h2").css("font-size", parseFloat($("h1").css("font-size")) / 1.2);
+      $(".form-control").css("font-size", parseFloat($(".form-control").css("font-size")) / 1.2);
+      $(".btn").css("font-size", parseFloat($(".btn").css("font-size")) / 1.2);
+      $(".navbar-brand").css("font-size", parseFloat($(".navbar-brand").css("font-size")) / 1.2);
+    });
+});
+
+hospital = null;
 // var pacients = [];
 var eleID_h1Titol = document.getElementById("h1TitolHospital");
 var eleID_nomHospital = document.getElementById("nomHospital");
@@ -16,7 +44,7 @@ function validaQueNoEsBuit(cadenaAValidar) {
   // If x is Not a Number or less than one or greater than 10
   if (cadenaAValidar=="") {
     alert("és buit!");
-  } 
+  }
 }
 
 function validaQueEsNombre() {
@@ -30,7 +58,7 @@ function validaQueEsNombre() {
   // If x is Not a Number or less than one or greater than 10
   if (isNaN(x)) {
     text = "Input not valid";
-    
+
     document.getElementById("numb").style.border = "2px solid red";
   } else {
   	if  (x < min && x > max) {
@@ -43,8 +71,8 @@ function validaQueEsNombre() {
         }
     }
   }
-  
-  
+
+
   document.getElementById("demo").innerHTML = text;
 }
 
@@ -53,9 +81,9 @@ function crearHospital() {
   var maximPacients = parseInt(document.getElementById("maximPacientsHospital").value);
 
   if (nom !== "" && maximPacients > 0) {
-      eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" + 
-          "<h1><b>" + 
-          nom + 
+      eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" +
+          "<h1><b>" +
+          nom +
           "</b></h1>";
     debugger;
       hospital = new Hospital(nom, maximPacients);
@@ -64,22 +92,22 @@ function crearHospital() {
       cadenaFilaPacient_1 = '<div class="row">' +
                             '<div class="col mb-3">' +
                             '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
-                            '<input type="text" id="nomPacient';
-                            
+                            '<input type="text" data-toggle="tooltip" title="Introdueix el nom del pacient" id="nomPacient';
+
       cadenaFilaPacient_2 = '" class="form-control" required minlength="1" maxlength="100" />' +
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '  <div class="col mb-3">' +
                             '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
-                            '    <input type="text" id="malaltia';
+                            '    <input type="text" data-toggle="tooltip" title="Introdueix la malaltia del pacient" id="malaltia';
       cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '</div> <!-- <div class="row"> -->';
-                              
+
       for (var pacient = 0; pacient < maximPacients; pacient++) {
         document.getElementById("dadesPacient").innerHTML += ( '' +
-            cadenaFilaPacient_1 + 
+            cadenaFilaPacient_1 +
             pacient.toString() +
-            cadenaFilaPacient_2 + 
+            cadenaFilaPacient_2 +
             pacient.toString() +
             cadenaFilaPacient_3);
       }
@@ -89,12 +117,12 @@ function crearHospital() {
     eleID_barra_missatges.classList.toggle("d-none");
     if (nom !== "") {
         eleID_a_text_missatge.innerText = "Cal que entris un nombre al camp màxim pacients!";
-    } else if(maximPacients > 0){  
+    } else if(maximPacients > 0){
         eleID_a_text_missatge.innerText = "Cal que entris un nom al camp Hospital!";
     } else {
         eleID_a_text_missatge.innerText = "Cal que entris un nom al camp Hospital i un nombre al camp màxim pacients!";
     }
-    
+
   }
 }
 
@@ -116,7 +144,7 @@ function ingressarPacients() {
 
   if (hospital !== null && (hospital.pacientsIngressats.length <= hospital.maximPacients)) {
     eleID_divPacients.classList.toggle("d-none");
-    
+
     // document.getElementById("nomHospitalGestio").innerHTML = hospital.nomHospital;
 
     for (var pacient = 0; pacient < hospital.pacientsIngressats.length; pacient++) {
@@ -128,7 +156,7 @@ function ingressarPacients() {
           '<label for="malaltia" class="font-weight-bold">Malaltia: </label>  <p id="malaltiaGestio' + pacient.toString() + '">' + hospital.pacientsIngressats[pacient].malaltia  + '</p>' +
         '</div>' +
         '<div class="col mb-3">' +
-          '<button class="btn btn-success" onClick="gestioDonarDalta(' + pacient + ')">Donar d\'alta</button> <button class="btn btn-danger" onClick="gestioMorir(' + pacient + ')">Morir</button>' +
+          '<button class="btn btn-success" data-toggle="tooltip" title="Fes clic a aquí quan el pacient estigui curat" onClick="gestioDonarDalta(' + pacient + ')">Donar d\'alta</button> <button class="btn btn-danger" data-toggle="tooltip" title="Fes clic a aquí quan el pacient s\'hagi mort" onClick="gestioMorir(' + pacient + ')">Morir</button>' +
         '<div class="col mb-3">' +
       '</div>');
     }
