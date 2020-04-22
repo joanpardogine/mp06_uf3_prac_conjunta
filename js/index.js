@@ -1,5 +1,34 @@
  hospital = null;
 // var pacients = [];
+
+/* Creació de una matriu (Array) anomenada llistaMalalties i incialitzada amb totes les malalties obtingudes de la
+** web de l'Hospital de la Vall d'Hebron https://hospital.vallhebron.com/ca/que-podem-fer-tu/malalties/llista-de-malalties */
+var llistaMalalties =['Alzheimer','Anells vasculars','Atrèsia pulmonar amb comunicació intraventricular',
+                      'Bacteria Gonorrea','Cadena de ADN','Canal auriculoventricular','Canal auriculoventricular parcial',
+                      'Càncer','Càncer de mama','Cardiopatia familiar','Coartació de l’aorta i hipoplàsia de l’arc aòrtic',
+                      'Comunicació interventricular (CIV)','Diabetis','Diftèria',
+                      'Displàsia de maluc en l’adolescent i l’adult jove','Doble sortida del ventricle dret',
+                      'Drenatge venós anòmal pulmonar total ','Ebola','Èczema','Epidermòlisi ampul·lar','Epilèpsia',
+                      'Esclerosi múltiple','Esofagitis eosinofílica ','Espina bífida Vall dHebron','Estenosi aòrtica ',
+                      'Fibromiàlgia','Glòbuls vermells','Grip','Hemofília','Herpes simple','Hipertensió arterial pulmonar',
+                      'Ictus','Infecció per virus del Zika','Intestí irritable','Lesionats medul·lars complexos',
+                      'Lesions valvulars: anomalia d’Ebstein','Lesions valvulars: anomalies congènites de la vàlvula mitral',
+                      'Lesions valvulars: estenosi pulmonar','Lupus','Ma tremolosa amb distonia','Malaltia celíaca',
+                      'Malaltia de Chagas','Malaltia del Crohn','Malalties metabòliques hereditàries',
+                      'Malalties neuromusculars i malalties rares','Malatia de Parkinson','Meningitis',
+                      'Miastènia gravis','Migranya','Mostra de sang amb sífilis','Neuroblastoma en la infància',
+                      'Neurocirurgia pediàtrica complexa','Osteoporosi','Osteosarcoma en infants','Pacient amb al·lèrgia',
+                      'Pacient amb cervicàlgia','Pacient amb dermatitis atòpica','Pacient amb diarrea',
+                      'Pacient amb escoliosi idiopàtica','Pacient amb refredat comú','Persistència del conducte arteriós',
+                      'Psoriasi','Reconstrucció complexa de la superfície ocular','Restrenyiment',
+                      'Sarcoma d’Ewing en els infants','Senyals de l’infart de miocardi','Sèpsia','Síndrome d’Asperger',
+                      'Síndrome de la hipoplàsia de cavitats esquerres','Síndromes de la fallada medul·lar congènita',
+                      'Tetralogia de Fallot','Tractament d’infeccions osteoarticulars resistents',
+                      'Transposició de grans artèries ','Trastorn Obsessiu Compulsiu (TOC)',
+                      'Tumor extraocular en la infància (Rabdomiosarcoma)',
+                      'Tumor intraocular en la infància (Retinoblastoma)','Tumors d’òrbita','Ventricle únic',
+                      'Virus del papil·loma humà (VPH)'];
+
 var eleID_h1Titol = document.getElementById("h1TitolHospital");
 var eleID_nomHospital = document.getElementById("nomHospital");
 var eleID_divPacients = document.getElementById("divPacients");
@@ -8,6 +37,12 @@ var eleID_divHospital = document.getElementById("divHospital");
 var eleID_barra_missatges = document.getElementById("barra_missatges");
 var eleID_a_text_missatge = document.getElementById("text_barra_missatges");
 
+
+function ompleSelectLlistaDeMalalties() {
+ /* Creació d'una funció per crear un desplegable amb totes les malalties de llistaMalalties */
+ 
+}
+ 
 function validaQueNoEsBuit(cadenaAValidar) {
   //var x, text;
   // Get the value of the input field with id="numb"
@@ -55,12 +90,39 @@ function crearHospital() {
   if (nom !== "" && maximPacients > 0) {
       eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" + 
           "<h1><b>" + 
-          nom + 
+          nom + crearHospital
           "</b></h1>";
     debugger;
       hospital = new Hospital(nom, maximPacients);
       eleID_divHospital.classList.toggle("d-none");
       var cadenaFilaPacient_1,cadenaFilaPacient_2,cadenaFilaPacient_3;
+   /* Creació de tres cadenes cadenaFilaPacient_1, cadenaFilaPacient_2 i cadenaFilaPacient_3
+   ** per faciliar la creació dels <div class="row"> que es crea per a cada pacient.
+   ** posteriorment afegeiré un objecte llisa desplegable, que l'ompliré amb tots els elements
+   ** de la matriu que acabo de crear llistaMalalties
+   ** */
+   var objSelect;
+   
+   
+   
+   
+   /*
+<select id="malaltiaPacient
+0">
+    <option value="malatia0">Alzheimer</option>
+    <option value="malatia1">Anells vasculars'</option>
+    ....
+    <option value="malatia52">Virus del papil·loma humà (VPH)'</option>
+</select>
+   */
+   
+   objSelect='">';
+    for (var indexMalaltia=0; indexMalaltia<length.llistaMalalties; indexMalaltia++) {
+        objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>'";  
+    }
+    objSelect+='</select>';
+   
+   
       cadenaFilaPacient_1 = '<div class="row">' +
                             '<div class="col mb-3">' +
                             '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
@@ -70,7 +132,7 @@ function crearHospital() {
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '  <div class="col mb-3">' +
                             '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
-                            '    <input type="text" id="malaltia';
+                            '    <select id="malaltia';
       cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '</div> <!-- <div class="row"> -->';
