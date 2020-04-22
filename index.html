@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Títol Modificat</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="estils/css.css"/>
   </head>
   <body>
   <!-- barra de missatges -->
@@ -21,15 +22,16 @@
       <div class="form-row mb-3">
         <div class="col">
           <label for="nomHospital" class="font-weight-bold">Nom: </label>
-<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
+				<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" title="Introduïr el nom" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
         </div>
         <div class="col">
-          <label for="maximPacients" class="font-weight-bold">Màxim de pacients que pot ingressar: </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
+          <label for="maximPacients" class="font-weight-bold">Màxim de pacients que pot ingressar: </label>  
+				<input type="number" id="maximPacientsHospital" title="Introduïr el nom" class="form-control" required min="0" max="100" value="2" />
           <!-- onblur="validaQueEsNombre()" -->
         </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
+        <button type="button" class="btn btn-primary mt-4" title="Vols crear?" onClick="crearHospital()">Crear</button>
       </div>
     </div>
 
