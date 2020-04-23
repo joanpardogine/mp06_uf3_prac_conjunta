@@ -70,8 +70,4 @@ if (primerCanviar){
     primerCanviar = true;
 
 }
-
-
-
-
 }
