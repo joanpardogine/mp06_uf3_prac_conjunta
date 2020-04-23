@@ -2,10 +2,13 @@
 <html lang="ca" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Gestió d'un Hospital Arnau 👍😄🍕🐳</title>
+    <title>Gestió d'un Hospital Arnau</title>
+    <script src="js/classes/pacient.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
+    <b>Text tamany:&nbsp;</b><button onclick="textamanyAugmentar()">➕</button><button onclick="textamanyDisminuir()">➖</button>
   <!-- barra de missatges -->
     <div class="text-center alert alert-danger alert-dismissibled d-none" id="barra_missatges">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -49,12 +52,11 @@
       <div id="dadesGestio"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="funcionalitat/index.js"></script>
 
     <script src="js/classes/hospital.js"></script>
-    <script src="js/classes/pacient.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
