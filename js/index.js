@@ -90,7 +90,7 @@ function crearHospital() {
   if (nom !== "" && maximPacients > 0) {
       eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" + 
           "<h1><b>" + 
-          nom + crearHospital
+          nom +
           "</b></h1>";
     debugger;
       hospital = new Hospital(nom, maximPacients);
