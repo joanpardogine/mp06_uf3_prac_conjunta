@@ -118,7 +118,7 @@ function crearHospital() {
    
    objSelect='">';
     for (var indexMalaltia=0; indexMalaltia<length.llistaMalalties; indexMalaltia++) {
-        objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>'";  
+        objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>';  
     }
     objSelect+='</select>';
    
