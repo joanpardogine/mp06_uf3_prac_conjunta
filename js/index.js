@@ -142,7 +142,7 @@ function crearHospital() {
             cadenaFilaPacient_1 + 
             pacient.toString() +
             cadenaFilaPacient_2 + 
-            pacient.toString() +
+            pacient.toString() + objSelect +
             cadenaFilaPacient_3);
       }
       eleID_divPacients.classList.toggle("d-none");
