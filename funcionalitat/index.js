@@ -59,6 +59,7 @@ if (primerCanviar){
     primerCanviar = false;
 
 }else{
+
     $("p").css('color', 'black');
     $("h1").css('color', 'black');
     $("h2").css('color', 'black');
