@@ -115,37 +115,39 @@ function crearHospital() {
 </select>
    */
    
-   objSelect='" class="form-control" required="" minlength="1" maxlength="100">';
+   objSelect='';
     for (var indexMalaltia=0; indexMalaltia<llistaMalalties.length; indexMalaltia++) {
-        objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>';  
+        objSelect+='<option value="'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>';  
     }
     objSelect+='</select>';
-   
-   
-      cadenaFilaPacient_1 = '<div class="row">' +
-                            '<div class="col mb-3">' +
-                            '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
-                            '<input type="text" id="nomPacient';
-                            
-      cadenaFilaPacient_2 = '" class="form-control" required minlength="1" maxlength="100" />' +
-                            '  </div> <!-- <div class="col mb-3"> -->' +
-                            '  <div class="col mb-3">' +
-                            '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
-                            '    <select id="malaltia';
-    
-      cadenaFilaPacient_3 = '  </div> <!-- <div class="col mb-3"> -->' +
-                            '</div> <!-- <div class="row"> -->';
+     var htmlDivClassRow = '<div class="row">';
+     var htmlDivClassCol = '<div class="col mb-3">';
+     var htmlFINALDivClassRow =  '</div> <!-- <div class="row"> -->';
+     var htmlFINALDivClassCol = '</div> <!-- <div class="col mb-3"> -->';
+     var htmlLabelNomPacient = '<label for="nomPacient" class="font-weight-bold">Nom:</label>';
+     var htmlLabelNomMalaltia = '<label for="malaltia"   class="font-weight-bold">Malaltia:</label>';
+     var html1rTrosInputNomPacient = '<input type="text" id="nomPacient';
+     var html1rTrosInputSelect = '<select id="malaltia';
+     var htmlFINALClassFormCtrl = '" class="form-control" required minlength="1" maxlength="100">';
+      // cadenaFilaPacient_1 = htmlDivClassRow + htmlDivClassCol + htmlLabelNomPacient + html1rTrosInputNomPacient;
+      // cadenaFilaPacient_1_2 = '" class="form-control" required minlength="1" maxlength="100">';
+      // cadenaFilaPacient_2 =  htmlFINALDivClassCol + htmlDivClassCol + htmlLabelNomMalaltia + html1rTrosInputSelect;
+      // cadenaFilaPacient_3 = htmlFINALDivClassCol + htmlFINALDivClassRow;
                               
       for (var pacient = 0; pacient < maximPacients; pacient++) {
         var cadPacient = pacient.toString();
-
-
         document.getElementById("dadesPacient").innerHTML += ( '' +
-            cadenaFilaPacient_1 + 
-            cadPacient +
-            cadenaFilaPacient_2 + 
-            cadPacient + objSelect +
-            cadenaFilaPacient_3);
+            htmlDivClassRow + 
+              htmlDivClassCol + 
+                htmlLabelNomPacient +
+                  html1rTrosInputNomPacient + cadPacient + htmlFINALClassFormCtrl +
+              htmlFINALDivClassCol + 
+              htmlDivClassCol +
+                htmlLabelNomMalaltia + 
+                  html1rTrosInputSelect + cadPacient + htmlFINALClassFormCtrl +
+                    objSelect +
+              htmlFINALDivClassCol +
+            htmlFINALDivClassRow);
       }
       eleID_divPacients.classList.toggle("d-none");
   } else {
