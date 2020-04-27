@@ -99,7 +99,6 @@ function crearHospital() {
    ** per faciliar la creació dels <div class="row"> que es crea per a cada pacient.
    ** */
    
-   
       var objSelect;
    /* Creació d'un objecte llisa desplegable, que ompliré amb tots els elements
    ** de la matriu que acabo de crear llistaMalalties 
@@ -132,8 +131,10 @@ function crearHospital() {
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '  <div class="col mb-3">' +
                             '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
-                            '    <select class="form-control" required minlength="1" maxlength="100" id="malaltia';
-      cadenaFilaPacient_3 = ' </div> <!-- <div class="col mb-3"> -->' +
+                            '    <select id="malaltia';
+    
+      cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
+                            '  </div> <!-- <div class="col mb-3"> -->' +
                             '</div> <!-- <div class="row"> -->';
                               
       for (var pacient = 0; pacient < maximPacients; pacient++) {
