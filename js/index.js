@@ -104,43 +104,36 @@ function crearHospital() {
    ** de la matriu que acabo de crear llistaMalalties 
    ** */
    
-   /*
- <select class="form-control" required minlength="1" maxlength="100" id="malaltia'
-0
-">
-    <option value="malatia0">Alzheimer</option>
-    <option value="malatia1">Anells vasculars'</option>
-    ....
-    <option value="malatia52">Virus del papil·loma humà (VPH)'</option>
-</select>
-   */
-   
    objSelect='';
     for (var indexMalaltia=0; indexMalaltia<llistaMalalties.length; indexMalaltia++) {
         objSelect+='<option value="'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>';  
     }
     objSelect+='</select>';
-     var htmlDivClassRow = '<div class="row">';
-     var htmlDivClassCol = '<div class="col mb-3">';
-     var htmlFINALDivClassRow =  '</div> <!-- <div class="row"> -->';
-     var htmlFINALDivClassCol = '</div> <!-- <div class="col mb-3"> -->';
-     var htmlLabelNomPacient = '<label for="nomPacient" class="font-weight-bold">Nom:</label>';
-     var htmlLabelNomMalaltia = '<label for="malaltia"   class="font-weight-bold">Malaltia:</label>';
-     var html1rTrosInputNomPacient = '<input type="text" id="nomPacient';
-     var html1rTrosInputSelect = '<select id="malaltia';
-     var htmlFINALClassFormCtrl = '" class="form-control" required minlength="1" maxlength="100">';
+
+    var htmlINICIDivClassRow = '<div class="row">';
+    var htmlFINALDivClassRow =  '</div> <!-- <div class="row"> -->';
+    
+    var htmlINICIDivClassCol = '<div class="col mb-3">';
+    var htmlFINALDivClassCol = '</div> <!-- <div class="col mb-3"> -->';
+
+    var htmlLabelNomPacient = '<label for="nomPacient" class="font-weight-bold">Nom:</label>';
+    var htmlLabelNomMalaltia = '<label for="malaltia"  class="font-weight-bold">Malaltia:</label>';
+
+    var htmlINICIInputNomPacient = '<input type="text" id="nomPacient';
+    var htmlINICIInputSelect = '<select id="malaltia';
+    var htmlFINALClassFormCtrl = '" class="form-control" required minlength="1" maxlength="100">';
 
       for (var pacient = 0; pacient < maximPacients; pacient++) {
         var cadPacient = pacient.toString();
         document.getElementById("dadesPacient").innerHTML += ( '' +
-            htmlDivClassRow + 
-              htmlDivClassCol + 
+          htmlINICIDivClassRow + 
+            htmlINICIDivClassCol + 
                 htmlLabelNomPacient +
-                  html1rTrosInputNomPacient + cadPacient + htmlFINALClassFormCtrl +
+                  htmlINICIInputNomPacient + cadPacient + htmlFINALClassFormCtrl +
               htmlFINALDivClassCol + 
               htmlDivClassCol +
                 htmlLabelNomMalaltia + 
-                  html1rTrosInputSelect + cadPacient + htmlFINALClassFormCtrl +
+                  htmlINICIInputSelect + cadPacient + htmlFINALClassFormCtrl +
                     objSelect +
               htmlFINALDivClassCol +
             htmlFINALDivClassRow);
