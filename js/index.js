@@ -129,11 +129,7 @@ function crearHospital() {
      var html1rTrosInputNomPacient = '<input type="text" id="nomPacient';
      var html1rTrosInputSelect = '<select id="malaltia';
      var htmlFINALClassFormCtrl = '" class="form-control" required minlength="1" maxlength="100">';
-      // cadenaFilaPacient_1 = htmlDivClassRow + htmlDivClassCol + htmlLabelNomPacient + html1rTrosInputNomPacient;
-      // cadenaFilaPacient_1_2 = '" class="form-control" required minlength="1" maxlength="100">';
-      // cadenaFilaPacient_2 =  htmlFINALDivClassCol + htmlDivClassCol + htmlLabelNomMalaltia + html1rTrosInputSelect;
-      // cadenaFilaPacient_3 = htmlFINALDivClassCol + htmlFINALDivClassRow;
-                              
+
       for (var pacient = 0; pacient < maximPacients; pacient++) {
         var cadPacient = pacient.toString();
         document.getElementById("dadesPacient").innerHTML += ( '' +
