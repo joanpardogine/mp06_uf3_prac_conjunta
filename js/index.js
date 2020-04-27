@@ -127,8 +127,7 @@ function crearHospital() {
                             '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
                             '<input type="text" id="nomPacient';
                             
-      cadenaFilaPacient_2 = '" class="form-control" required minlength="1" maxlength="100" />' +
-                            '  </div> <!-- <div class="col mb-3"> -->' +
+      cadenaFilaPacient_2 = '  </div> <!-- <div class="col mb-3"> -->' +
                             '  <div class="col mb-3">' +
                             '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
                             '    <select id="malaltia';
