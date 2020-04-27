@@ -90,7 +90,7 @@ function crearHospital() {
   if (nom !== "" && maximPacients > 0) {
       eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" + 
           "<h1><b>" + 
-          nom + crearHospital
+          nom + 
           "</b></h1>";
     debugger;
       hospital = new Hospital(nom, maximPacients);
@@ -117,8 +117,8 @@ function crearHospital() {
    */
    
    objSelect='">';
-    for (var indexMalaltia=0; indexMalaltia<length.llistaMalalties; indexMalaltia++) {
-        objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>'";  
+    for (var indexMalaltia=0; indexMalaltia<llistaMalalties.length; indexMalaltia++) {
+        objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>';  
     }
     objSelect+='</select>';
    
