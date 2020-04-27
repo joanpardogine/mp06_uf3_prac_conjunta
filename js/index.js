@@ -115,7 +115,7 @@ function crearHospital() {
 </select>
    */
    
-   objSelect='">';
+   objSelect='" class="form-control" required="" minlength="1" maxlength="100">';
     for (var indexMalaltia=0; indexMalaltia<llistaMalalties.length; indexMalaltia++) {
         objSelect+='<option value="malaltia'+indexMalaltia.toString()+'">'+llistaMalalties[indexMalaltia]+'</option>';  
     }
@@ -127,13 +127,13 @@ function crearHospital() {
                             '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
                             '<input type="text" id="nomPacient';
                             
-      cadenaFilaPacient_2 = '  </div> <!-- <div class="col mb-3"> -->' +
+      cadenaFilaPacient_2 = '" class="form-control" required minlength="1" maxlength="100" />' +
+                            '  </div> <!-- <div class="col mb-3"> -->' +
                             '  <div class="col mb-3">' +
                             '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
                             '    <select id="malaltia';
     
-      cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
-                            '  </div> <!-- <div class="col mb-3"> -->' +
+      cadenaFilaPacient_3 = '  </div> <!-- <div class="col mb-3"> -->' +
                             '</div> <!-- <div class="row"> -->';
                               
       for (var pacient = 0; pacient < maximPacients; pacient++) {
