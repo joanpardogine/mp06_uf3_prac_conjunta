@@ -8,6 +8,7 @@ var eleID_divHospital = document.getElementById("divHospital");
 var eleID_barra_missatges = document.getElementById("barra_missatges");
 var eleID_a_text_missatge = document.getElementById("text_barra_missatges");
 
+
 function validaQueNoEsBuit(cadenaAValidar) {
   //var x, text;
 alert("hola");
@@ -17,6 +18,41 @@ alert("hola");
   // If x is Not a Number or less than one or greater than 10
   if (cadenaAValidar=="") {
     alert("és buit!");
+
+const etCapMalaltia = "capMalaltia";
+
+function espera(ms){
+  var start = new Date().getTime();
+  var end = start;
+  while(end < start + ms) {
+    end = new Date().getTime();
+ }
+}
+
+
+function mostraMissatge(missatge){
+  // eleID_barra_missatges.title=="";
+  eleID_a_text_missatge.innerHTML = "";
+  eleID_barra_missatges.classList.toggle("d-none");
+  eleID_a_text_missatge.innerHTML = missatge;
+  //eleID_barra_missatges.hidden=true;
+  // espera(3000);  // 3 seconds in milliseconds
+  //eleID_barra_missatges.hidden=false;
+}
+
+
+function ompleSelectLlistaDeMalalties() {
+ /* Creació d'una funció per crear un desplegable amb totes les malalties de llistaMalalties */
+ 
+}
+ 
+function validaQueNoEsBuit(cadenaAValidar) {
+  if (cadenaAValidar.value=="" || cadenaAValidar.value=='undefined') {
+    mostraMissatge(`El camp <b>${cadenaAValidar.name}</b> no pot quedar-se en blanc!`);
+    //espera(3000);  // 3 seconds in milliseconds
+    //eleID_barra_missatges.hidden=false;
+    //eleID_barra_missatges.classList.toggle("d-none");
+
   } 
 }
 
@@ -62,6 +98,7 @@ function crearHospital() {
       hospital = new Hospital(nom, maximPacients);
       eleID_divHospital.classList.toggle("d-none");
       var cadenaFilaPacient_1,cadenaFilaPacient_2,cadenaFilaPacient_3;
+
       cadenaFilaPacient_1 = '<div class="row">' +
                             '<div class="col mb-3">' +
                             '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
@@ -83,6 +120,55 @@ function crearHospital() {
             cadenaFilaPacient_2 + 
             pacient.toString() +
             cadenaFilaPacient_3);
+
+   /* Creació de tres cadenes cadenaFilaPacient_1, cadenaFilaPacient_2 i cadenaFilaPacient_3
+   ** per faciliar la creació dels <div class="row"> que es crea per a cada pacient.
+   ** */
+   
+      var objSelect;
+   /* Creació d'un objecte llisa desplegable, que ompliré amb tots els elements
+   ** de la matriu que acabo de crear llistaMalalties 
+   ** */
+   
+    objSelect=`<option value=\"${etCapMalaltia}\">------ Escull un malaltia ------</option>`;
+    for (var indexMalaltia=0; indexMalaltia<llistaMalalties.length; indexMalaltia++) {
+        objSelect+=`<option value=\"${indexMalaltia.toString()}\">${llistaMalalties[indexMalaltia]}</option>`;  
+    }
+    objSelect+='</select>';
+
+    var htmlINICIDivClassRow = '<div class="row">';
+    var htmlFINALDivClassRow =  '</div> <!-- <div class="row"> -->';
+    
+    var htmlINICIDivClassCol = '<div class="col mb-3">';
+    var htmlFINALDivClassCol = '</div> <!-- <div class="col mb-3"> -->';
+
+
+
+    var htmlINICIInputNomPacient = `<input type=\"text\" title=\"Entra el nom del pacient!\" name=\"Nom Pacient\" 
+                                  onblur=\"validaQueNoEsBuit(this)\" placeHolder=\"Nom pacient\" id=\"nomPacient`;
+
+    var htmlINICIInputSelect = '<select id="malaltia';
+    var htmlFINALClassFormCtrl = '" class="form-control" required minlength="1" maxlength="100">';
+
+      for (var pacient = 0; pacient < maximPacients; pacient++) {
+        var cadPacient = pacient.toString();
+
+        var htmlLabelNomPacient = `<label for=\"nomPacient${pacient}\" class=\"font-weight-bold\">Nom pacient:</label>`;
+        var htmlLabelNomMalaltia = `<label for=\"nomMalaltiaPacient${pacient}\"  class=\"font-weight-bold\">Malaltia de pacient:</label>`;
+
+        document.getElementById("dadesPacient").innerHTML += ( '' +
+          htmlINICIDivClassRow + 
+            htmlINICIDivClassCol + 
+                htmlLabelNomPacient +
+                  htmlINICIInputNomPacient + cadPacient + htmlFINALClassFormCtrl +
+              htmlFINALDivClassCol + 
+              htmlINICIDivClassCol +
+                htmlLabelNomMalaltia + 
+                  htmlINICIInputSelect + cadPacient + htmlFINALClassFormCtrl +
+                    objSelect +
+              htmlFINALDivClassCol +
+            htmlFINALDivClassRow);
+
       }
       eleID_divPacients.classList.toggle("d-none");
   } else {
