@@ -89,26 +89,25 @@ function crearHospital() {
 
   if (nom !== "" && maximPacients > 0) {
       eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" + 
-          "<h1><b>" + 
-          nom + 
-          "</b></h1>";
-    debugger;
+          "<h1><b>" + nom + "</b></h1>";
       hospital = new Hospital(nom, maximPacients);
       eleID_divHospital.classList.toggle("d-none");
+
+
       var cadenaFilaPacient_1,cadenaFilaPacient_2,cadenaFilaPacient_3;
    /* Creació de tres cadenes cadenaFilaPacient_1, cadenaFilaPacient_2 i cadenaFilaPacient_3
    ** per faciliar la creació dels <div class="row"> que es crea per a cada pacient.
-   ** posteriorment afegeiré un objecte llisa desplegable, que l'ompliré amb tots els elements
-   ** de la matriu que acabo de crear llistaMalalties
    ** */
-   var objSelect;
    
-   
-   
+      var objSelect;
+   /* Creació d'un objecte llisa desplegable, que ompliré amb tots els elements
+   ** de la matriu que acabo de crear llistaMalalties 
+   ** */
    
    /*
-<select id="malaltiaPacient
-0">
+ <select class="form-control" required minlength="1" maxlength="100" id="malaltia'
+0
+">
     <option value="malatia0">Alzheimer</option>
     <option value="malatia1">Anells vasculars'</option>
     ....
@@ -133,16 +132,20 @@ function crearHospital() {
                             '  <div class="col mb-3">' +
                             '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
                             '    <select id="malaltia';
+    
       cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '</div> <!-- <div class="row"> -->';
                               
       for (var pacient = 0; pacient < maximPacients; pacient++) {
+        var cadPacient = pacient.toString();
+
+
         document.getElementById("dadesPacient").innerHTML += ( '' +
             cadenaFilaPacient_1 + 
-            pacient.toString() +
+            cadPacient +
             cadenaFilaPacient_2 + 
-            pacient.toString() +
+            cadPacient + objSelect +
             cadenaFilaPacient_3);
       }
       eleID_divPacients.classList.toggle("d-none");
