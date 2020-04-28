@@ -6,9 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="hospital.css">
 	
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-
+	
 		$(function(){
 		$("#boton_audio").click(function(){
 			$('.audio_titulo span').hover(
@@ -43,8 +54,33 @@
 					$("audio")[3].pause();
 				}
 			);
+			$('.escrivint_nom').hover(
+				function() { 
+					$("audio")[4].play();
+				},
+				function() { 
+					$("audio")[4].pause();
+				}
+			);
+			$('.numero_pacients').hover(
+				function() { 
+					$("audio")[5].play();
+				},
+				function() { 
+					$("audio")[5].pause();
+				}
+			);
+			$('.boto_crear').hover(
+				function() { 
+					$("audio")[6].play();
+				},
+				function() { 
+					$("audio")[6].pause();
+				}
+			);
 		});
     });
+	
 	</script>
 	
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -52,32 +88,32 @@
 	
   </head>
   <body>
-  <button class="btn btn-primary mt-4 boton_audio_ayuda" type="button" id="boton_audio">Audio ayuda</button><br><br>
  
   <!-- barra de missatges -->
     <div class="text-center alert alert-danger alert-dismissibled d-none" id="barra_missatges">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <h3 id="text_barra_missatges">
-        </h3>
+      <h3 id="text_barra_missatges"></h3>
     </div>
+	 <button class="button gradient-bg mt-4 boton_audio_ayuda" type="button" id="boton_audio">Audio ajuda</button><br><br>
   <!-- barra de missatges -->
     <h1 class="text-center mb-3 titulo audio_titulo" id="h1TitolHospital" title="Gestió d'un Hospital" alt="Gestió d'un Hospital"><span>Gestió d'un Hospital</span></h1>
 
-    <div class="mx-auto align-items-center mb-3 p-4 contenidor" id="divHospital">
+    <div class="mx-auto align-items-center mb-3 p-4 contenidor opening-hours" id="divHospital">
       <h2 class="text-center">Hospital</h2>
       <p class="text-center audio_introdueix" title="Introdueix les dades de l'hospital que vols crear" alt="Introdueix les dades de l'hospital que vols crear"><span>Introdueix les dades de l'hospital que vols crear:</span></p>
       <div class="form-row mb-3">
         <div class="col">
           <label for="nomHospital" class="font-weight-bold titulo_campos nom_hospital" title="Nom" alt="Nom"><span>Nom:</<span> </label>
-<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
+<input type="text" id="nomHospital" class="form-control escrivint_nom" required minlength="1" maxlength="100" value="" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
         </div>
         <div class="col">
-          <label for="maximPacients" class="font-weight-bold titulo_campos maxim_pacients" title="Màxim de pacients que pot ingressar:" alt="Màxim de pacients que pot ingressar:"><span>Màxim de pacients que pot ingressar:</span> </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
+          <label for="maximPacients" class="font-weight-bold titulo_campos maxim_pacients" title="Màxim de pacients que pot ingressar:" alt="Màxim de pacients que pot ingressar:"><span>Màxim de pacients que pot ingressar:</span> </label>
+			<input type="number" id="maximPacientsHospital" class="form-control numero_pacients" required min="0" max="100" value="2" />
           <!-- onblur="validaQueEsNombre()" -->
         </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary mt-4" title="Crear" alt="Crear" onClick="crearHospital()">Crear</button>
+        <button type="button" class="button gradient-bg boto_crear" title="Crear" alt="Crear" onClick="crearHospital()">Crear</button>
       </div>
     </div>
 
@@ -120,6 +156,18 @@
 	
 	<audio preload>
 		<source src="audio/audio introdueix el màxim de pacients que poden ingressar.mp3" type="audio/mp3">
+	</audio>
+	
+	<audio preload>
+		<source src="audio/audio escrivint el nom del hospital.mp3" type="audio/mp3">
+	</audio>
+	
+	<audio preload>
+		<source src="audio/audio escull la quantitat de pacients que poden ingressar.mp3" type="audio/mp3">
+	</audio>
+	
+	<audio preload>
+		<source src="audio/audio boto crear hospital.mp3" type="audio/mp3">
 	</audio>
   </body>
 </html>
