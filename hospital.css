@@ -1,0 +1,27 @@
+html {
+	cursor: url(https://marabelia.com/wp-content/uploads/2018/01/cursor6.png), pointer;
+}
+
+label {
+	cursor: url(https://marabelia.com/wp-content/uploads/2018/01/cursor6.png), pointer;
+}
+
+.contenidor {
+	width: 1000px;
+	margin-top: 3% !important;
+	border: 3px solid #007bff;
+}
+
+.titulo {
+	margin-top: 3% !important;
+	font-size: 45px;
+    font-weight: bold;
+}
+
+.titulo_campos {
+	font-size: 20px;
+}
+
+.boton_audio_ayuda {
+	margin-left: 45%;
+}
