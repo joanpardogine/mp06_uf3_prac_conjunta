@@ -1,2 +1,12 @@
 
 Les Millores que he incorporat a la web de l ameva branca són:
+
+
+*Discapacitat Visual*
+
+
+- Title al botó i als inputs
+
+- Modificació del color del "border" dels inputs
+
+- Incorporació d'un "hover" i un "active" als inputs
