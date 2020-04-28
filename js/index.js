@@ -1,4 +1,50 @@
- hospital = null;
+//JQUERY per canviar el tema de la web de color
+$( document ).ready(function() {
+  $( '#canviatemaw' ).hide();
+  console.log( "ready!" );
+  $( "#canviatemab" ).click(function() {
+    $( 'body' ).css( "background-color", "black" );
+    $( 'body' ).css( "color", "white" );
+    $( '#canviatemab' ).hide();
+    $( '#canviatemaw' ).show();
+  });
+  $( "#canviatemaw" ).click(function() {
+    $( 'body' ).css( "background-color", "white" );
+    $( 'body' ).css( "color", "black" );
+    $( '#canviatemaw' ).hide();
+    $( '#canviatemab' ).show();
+  });
+
+//Fer zoom al navegador
+var currentZoom = 1;
+$('#zoomin').click(function() {
+  if(currentZoom < 1.3){
+    currentZoom += 0.1;
+    $('body').css({
+        zoom: currentZoom,
+        '-moz-transform': 'scale(' + currentZoom + ')'
+    });
+  }
+});
+$('#zoomout').click(function() {
+  if(currentZoom >= 0.8){
+    currentZoom -= 0.1;
+    $('body').css({
+      zoom: currentZoom,
+      '-moz-transform': 'scale(' + currentZoom + ')'
+  });
+  }
+});
+$('#zoomdef').click(function() {
+    currentZoom = 1;
+    $('body').css({
+        zoom: currentZoom,
+        '-moz-transform': 'scale(' + currentZoom + ')'
+    });
+});
+});
+
+hospital = null;
 // var pacients = [];
 var eleID_h1Titol = document.getElementById("h1TitolHospital");
 var eleID_nomHospital = document.getElementById("nomHospital");
@@ -63,13 +109,13 @@ function crearHospital() {
       var cadenaFilaPacient_1,cadenaFilaPacient_2,cadenaFilaPacient_3;
       cadenaFilaPacient_1 = '<div class="row">' +
                             '<div class="col mb-3">' +
-                            '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
+                            '<label for="nomPacient" class="font-weight-bold"> Nom del pacient: </label>' +
                             '<input type="text" id="nomPacient';
                             
       cadenaFilaPacient_2 = '" class="form-control" required minlength="1" maxlength="100" />' +
                             '  </div> <!-- <div class="col mb-3"> -->' +
                             '  <div class="col mb-3">' +
-                            '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
+                            '    <label for="malaltia" class="font-weight-bold">Malaltia a tractar: </label>' +
                             '    <input type="text" id="malaltia';
       cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
                             '  </div> <!-- <div class="col mb-3"> -->' +
@@ -128,7 +174,7 @@ function ingressarPacients() {
           '<label for="malaltia" class="font-weight-bold">Malaltia: </label>  <p id="malaltiaGestio' + pacient.toString() + '">' + hospital.pacientsIngressats[pacient].malaltia  + '</p>' +
         '</div>' +
         '<div class="col mb-3">' +
-          '<button class="btn btn-success" onClick="gestioDonarDalta(' + pacient + ')">Donar d\'alta</button> <button class="btn btn-danger" onClick="gestioMorir(' + pacient + ')">Morir</button>' +
+          '<button class="btn btn-success" title="Si el pacient s\'ha recuperat, el donarem d\'alta fent clic a aquest botó!" onClick="gestioDonarDalta(' + pacient + ')">Donar d\'alta</button> <button class="btn btn-danger" title="Si el pacient es mor, declarem la defunció fent clic a aquest botó!" onClick="gestioMorir(' + pacient + ')">Morir</button>' +
         '<div class="col mb-3">' +
       '</div>');
     }
@@ -142,9 +188,9 @@ function gestioDonarDalta(llitPacient) {
   document.getElementById("dadesGestioPacient" + llitPacient.toString()).remove();
 
   if (totsLlitsBuits())
-  dadesGestio.innerHTML = ('<p class="text-center">L\'Hospital ' + hospital.nom + ' no té cap pacient ingressat en aquests moments.</p>' +
+  dadesGestio.innerHTML = ('<p class="text-center">L\'Hospital ' + hospital.nomHospital + ' no té cap pacient ingressat en aquests moments.</p>' +
   '<div class="text-center">' +
-    '<button type="button" class="btn btn-primary mt-4" onClick="window.location.reload()">Tornar a començar</button>' +
+    '<button type="button" class="btn btn-primary mt-4" title="Per tornar a poder ingressar pacients fes clic!" onClick="window.location.reload()">Tornar a ingressar pacients</button>' +
   '</div>');
 }
 
@@ -153,9 +199,9 @@ function gestioMorir(llitPacient) {
   document.getElementById("dadesGestioPacient" + llitPacient.toString()).remove();
 
   if (totsLlitsBuits())
-    dadesGestio.innerHTML = ('<p class="text-center">L\'Hospital ' + hospital.nom + ' no té cap pacient ingressat en aquests moments.</p>' +
+    dadesGestio.innerHTML = ('<p class="text-center">L\'Hospital ' + hospital.nomHospital + ' no té cap pacient ingressat en aquests moments.</p>' +
     '<div class="text-center">' +
-      '<button type="button" class="btn btn-primary mt-4" onClick="window.location.reload()">Tornar a començar</button>' +
+      '<button type="button" class="btn btn-primary mt-4" title="Per tornar a poder ingressar pacients fes clic!" onClick="window.location.reload()">Torna a ingressar pacients</button>' +
     '</div>');
 }
 

@@ -1,0 +1,15 @@
+Per tal de poder millorar la visualització i el funcionament s'han fet les següents correccions:
+
+	//Correccions logiques
+	S'han afegit titols a tots els botons per tal de quan posem el ratolí a sobre ens mostri una descripció de la funció que fa aquell botó. 
+	S'han ajustat diferents camps per tal de que quedi més clara la informació i el funcionament de la mateixa web.
+	
+	//Correccions visuals
+	S'ha afegit JQUERY això ens permet utilitzar els botons de dalt de la pantalla a la dreta, aquests botons consten de:
+		-Poder canviar el tema de color clar a color fosc de la web i a l'invers.
+		-Poder augmentar el ZOOM de tota la web.
+		-Poder disminuir el ZOOM de tota la web.
+		-Poder ficar per defecte el ZOOM a la web.
+	
+	A nivell visual també s'ha modificat el color dels botons i marges per tal de centralitzar l'atenció del'usuari amb els marges i botons de color verd.
+	El color verd permet a l'usuari saber on ha de centrar l'atenció i on està l'us de la web i/o l'aplicació principal.
