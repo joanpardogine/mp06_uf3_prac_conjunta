@@ -2,10 +2,58 @@
 <html lang="ca" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Gestió d'un Hospital 🏥</title>
+    <title>Gestió d'un Hospital</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="hospital.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+		$(function(){
+		$("#boton_audio").click(function(){
+			$('.audio_titulo span').hover(
+				function() { 
+					$("audio")[0].play();
+				},
+				function() { 
+					$("audio")[0].pause();
+				}
+			);
+			$('.audio_introdueix span').hover(
+				function() { 
+					$("audio")[1].play();
+				},
+				function() { 
+					$("audio")[1].pause();
+				}
+			);
+			$('.nom_hospital span').hover(
+				function() { 
+					$("audio")[2].play();
+				},
+				function() { 
+					$("audio")[2].pause();
+				}
+			);
+			$('.maxim_pacients span').hover(
+				function() { 
+					$("audio")[3].play();
+				},
+				function() { 
+					$("audio")[3].pause();
+				}
+			);
+		});
+    });
+	</script>
+	
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	
   </head>
   <body>
+  <button class="btn btn-primary mt-4 boton_audio_ayuda" type="button" id="boton_audio">Audio ayuda</button><br><br>
+ 
   <!-- barra de missatges -->
     <div class="text-center alert alert-danger alert-dismissibled d-none" id="barra_missatges">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -13,23 +61,23 @@
         </h3>
     </div>
   <!-- barra de missatges -->
-    <h1 class="text-center mt-3 mb-3" id="h1TitolHospital">Gestió d'un Hospital</h1>
+    <h1 class="text-center mb-3 titulo audio_titulo" id="h1TitolHospital" title="Gestió d'un Hospital" alt="Gestió d'un Hospital"><span>Gestió d'un Hospital</span></h1>
 
-    <div class="w-50 mx-auto align-items-center border border-primary mt-3 mb-3 p-4" id="divHospital">
+    <div class="mx-auto align-items-center mb-3 p-4 contenidor" id="divHospital">
       <h2 class="text-center">Hospital</h2>
-      <p class="text-center">Introdueix les dades de l'hospital que vols crear:</p>
+      <p class="text-center audio_introdueix" title="Introdueix les dades de l'hospital que vols crear" alt="Introdueix les dades de l'hospital que vols crear"><span>Introdueix les dades de l'hospital que vols crear:</span></p>
       <div class="form-row mb-3">
         <div class="col">
-          <label for="nomHospital" class="font-weight-bold">Nom: </label>
-<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
+          <label for="nomHospital" class="font-weight-bold titulo_campos nom_hospital" title="Nom" alt="Nom"><span>Nom:</<span> </label>
+<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
         </div>
         <div class="col">
-          <label for="maximPacients" class="font-weight-bold">Màxim de pacients que pot ingressar: </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
+          <label for="maximPacients" class="font-weight-bold titulo_campos maxim_pacients" title="Màxim de pacients que pot ingressar:" alt="Màxim de pacients que pot ingressar:"><span>Màxim de pacients que pot ingressar:</span> </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
           <!-- onblur="validaQueEsNombre()" -->
         </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
+        <button type="button" class="btn btn-primary mt-4" title="Crear" alt="Crear" onClick="crearHospital()">Crear</button>
       </div>
     </div>
 
@@ -49,12 +97,29 @@
       <div id="dadesGestio"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
     <script src="js/classes/hospital.js"></script>
     <script src="js/classes/pacient.js"></script>
     <script src="js/index.js"></script>
+	
+	<!--Audios-->
+	<audio preload>
+		<source src="audio/audio Gestio de un hospital.mp3" type="audio/mp3">
+	</audio>
+	
+	<audio preload>
+		<source src="audio/audio introdueix les dades de l'hospital que vols crear.mp3" type="audio/mp3">
+	</audio>
+	
+	<audio preload>
+		<source src="audio/audio introdueix el nom del hospital.mp3" type="audio/mp3">
+	</audio>
+	
+	<audio preload>
+		<source src="audio/audio introdueix el màxim de pacients que poden ingressar.mp3" type="audio/mp3">
+	</audio>
   </body>
 </html>
