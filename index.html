@@ -8,8 +8,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-    <label>Text tamany:&nbsp;</label><button onclick="textamanyAugmentar()">➕</button><button onclick="textamanyDisminuir()">➖</button><br>
-    <label>contrast:&nbsp;</label><button onclick="canviarContrast()">canviar</button>
+
+    <!-- As a link -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Eines d'accessibilitat:</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <label class="nav-link">Text tamany:</label><button type="button" class="btn btn-primary" onclick="textamanyAugmentar()">Augmentar <img src="img/zoom_in-24px.svg" alt="símbol d'augmentar"></button>&nbsp;<button type="button" class="btn btn-primary" onclick="textamanyDisminuir()">Disminuir<img src="img/zoom_out-24px.svg" alt="símbol de disminuir"></button>
+    <label class="nav-link">contrast:</label><button type="button" class="btn btn-primary" onclick="canviarContrast()">canviar</button>
+  </div>
+</nav>
+
+
   <!-- barra de missatges -->
     <div class="text-center alert alert-danger alert-dismissibled d-none" id="barra_missatges">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
