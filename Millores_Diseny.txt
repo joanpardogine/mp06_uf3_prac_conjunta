@@ -10,3 +10,5 @@ Les Millores que he incorporat a la web de l ameva branca són:
 - Modificació del color del "border" dels inputs
 
 - Incorporació d'un "hover" i un "active" als inputs
+
+- canvi de color de fons del body en funció del tamany de la pantalla emprant media queris
