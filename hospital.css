@@ -1,9 +1,14 @@
+
 html {
 	cursor: url(https://marabelia.com/wp-content/uploads/2018/01/cursor6.png), pointer;
 }
 
 label {
 	cursor: url(https://marabelia.com/wp-content/uploads/2018/01/cursor6.png), pointer;
+}
+
+.boton_ingresar {
+	margin-top: -2% !important;
 }
 
 .contenidor {
@@ -23,6 +28,35 @@ label {
 
 .boton_audio_ayuda {
 	margin-left: 43%;
+	border-color: transparent !important;
+    background: -moz-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%) !important;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(50,200,250,1)), color-stop(100%, rgba(88,125,228,1))) !important;
+    background: -webkit-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%) !important;
+    background: -o-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%) !important;
+    background: -ms-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important;
+    background: linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18a3eb', endColorstr='#587de4',GradientType=1 ) !important;
+    color: #fff !important;
+}
+
+.boton_audio_ayuda:hover {
+	background: rgba(88,125,228,1)!important;
+}
+
+.boto_crear{
+	border-color: transparent !important;
+    background: -moz-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%) !important;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(50,200,250,1)), color-stop(100%, rgba(88,125,228,1))) !important;
+    background: -webkit-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%) !important;
+    background: -o-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%) !important;
+    background: -ms-linear-gradient(180deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important;
+    background: linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18a3eb', endColorstr='#587de4',GradientType=1 ) !important;
+    color: #fff !important;
+}
+
+.boto_crear:hover {
+	background: rgba(88,125,228,1)!important;
 }
 
 .opening-hours h2 {
