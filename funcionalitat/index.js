@@ -56,7 +56,7 @@ function canviarContrast() {
 if (primerCanviar){
 
     $("p").css('color', 'white');
-    $("h1").css('color', 'white');
+    // $("h1").css('color', 'white');
     $("h2").css('color', 'white');
     $("label").css('color', 'white');
     $("body").css('background-color', 'black');
@@ -64,6 +64,8 @@ if (primerCanviar){
     // $("button").css('color', 'white');
     $("b").css('color', 'white');
     $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
+
+    $("#divHospital").removeClass("bg-light").addClass("bg-dark");
 
 
 
@@ -73,7 +75,7 @@ if (primerCanviar){
 }else{
 
     $("p").css('color', 'black');
-    $("h1").css('color', 'black');
+    // $("h1").css('color', 'black');
     $("h2").css('color', 'black');
     $("label").css('color', 'black');
     $("body").css('background-color', 'white');
@@ -81,6 +83,10 @@ if (primerCanviar){
     // $("button").css('color', 'black');
     $("b").css('color', 'black');
     $( ".navbar " ).removeClass("navbar-dark bg-dark").addClass("navbar-light bg-light");
+
+    $("#divHospital").removeClass("bg-dark").addClass("bg-light");
+
+
 
 
     primerCanviar = true;
