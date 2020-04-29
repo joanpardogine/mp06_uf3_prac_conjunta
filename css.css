@@ -1,0 +1,21 @@
+#h1TitolHospital{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#divHospital{
+    border: 10px;
+    border-radius: 5px;
+    background-color: #245ee0;
+}
+
+h1, h2, label, p{
+    color: #ffed19;
+}
+body{
+    background-image: url(imagenes/espiral-tecnologico-4564.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
