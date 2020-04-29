@@ -1,3 +1,13 @@
+$( "#btnCrear" ).hover(
+  function() {
+$('.btnCrearp').show();
+}
+);
+$( "#divHospital" ).hover(
+  function() {
+$('.btnCrearp').hide();
+}
+);
 function textamanyAugmentar() {
 $("label").each(function( index ) {
 textamanyLlabel=$(this).css('font-size');
@@ -20,7 +30,6 @@ $(this).css('font-size', parseInt(textamanyP)*1.5+"px");
 });
 
 }
-
 function textamanyDisminuir() {
 $("label").each(function( index ) {
 textamanyLlabel=$(this).css('font-size');
@@ -42,8 +51,6 @@ textamanyP=$(this).css('font-size');
 $(this).css('font-size', parseInt(textamanyP)/1.5+"px");
 });
 }
-
-
 var primerCanviar = true;
 function canviarContrast() {
 if (primerCanviar){
@@ -56,7 +63,7 @@ if (primerCanviar){
     $("button").css('background-color', 'black');
     $("button").css('color', 'white');
     $("b").css('color', 'white');
-    $( ".navbar " ).removeClass("navbar-light").addClass( "navbar-dark" );
+    $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
 
 
 
@@ -73,7 +80,7 @@ if (primerCanviar){
     $("button").css('background-color', 'white');
     $("button").css('color', 'black');
     $("b").css('color', 'black');
-    $( ".navbar " ).removeClass("navbar-dark").addClass("navbar-light");
+    $( ".navbar " ).removeClass("navbar-dark bg-dark").addClass("navbar-light bg-light");
 
 
     primerCanviar = true;

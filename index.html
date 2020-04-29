@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <title>Gestió de molts Hospitals de l'Arnau</title>
     <script src="js/classes/pacient.js"></script>
+    <style>
+      .btnCrearp{
+        display: none;
+      }
+
+
+    </style>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
@@ -47,7 +54,10 @@
         </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
+        <button type="button" id="btnCrear" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
+        <p class="text-muted btnCrearp">
+        Aquest botó serveix per crear un hospital.
+        </p>
       </div>
     </div>
 
