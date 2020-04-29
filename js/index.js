@@ -1,6 +1,6 @@
 /*<<<<<<< HEAD*/
  
-/*$(function(){
+$(function(){
 		$("#boton_audio").click(function(){
 			$('.audio_titulo span').hover(
 				function() { 
@@ -51,7 +51,7 @@
 				}
 			);
 		});
-    }); */
+    });
  
  hospital = null;
 // var pacients = [];
