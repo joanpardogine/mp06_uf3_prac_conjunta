@@ -55,6 +55,11 @@ if (primerCanviar){
     $("body").css('background-color', 'black');
     $("button").css('background-color', 'black');
     $("button").css('color', 'white');
+    $("b").css('color', 'white');
+    $( ".navbar " ).removeClass("navbar-light").addClass( "navbar-dark" );
+
+
+
 
     primerCanviar = false;
 
@@ -67,6 +72,9 @@ if (primerCanviar){
     $("body").css('background-color', 'white');
     $("button").css('background-color', 'white');
     $("button").css('color', 'black');
+    $("b").css('color', 'black');
+    $( ".navbar " ).removeClass("navbar-dark").addClass("navbar-light");
+
 
     primerCanviar = true;
 
