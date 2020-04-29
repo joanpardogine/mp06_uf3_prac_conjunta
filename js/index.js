@@ -1,3 +1,57 @@
+ 
+$(function(){
+		$("#boton_audio").click(function(){
+			$('.audio_titulo span').hover(
+				function() { 
+					$("audio")[0].play();
+				},
+				function() { 
+					$("audio")[0].pause();
+				}
+			);
+			$('.titol_nom_pacient').hover(
+				function() { 
+					$("audio")[7].play();
+				},
+				function() { 
+					$("audio")[7].pause();
+				}
+			);
+			$('.nom_pacient').hover(
+				function() { 
+					$("audio")[8].play();
+				},
+				function() { 
+					$("audio")[8].pause();
+				}
+			);
+			$('.titol_nom_malaltia').hover(
+				function() { 
+					$("audio")[9].play();
+				},
+				function() { 
+					$("audio")[9].pause();
+				}
+			);
+			$('.nom_malaltia').hover(
+				function() { 
+					$("audio")[10].play();
+				},
+				function() { 
+					$("audio")[10].pause();
+				}
+			);
+			$('.boto_ingressar').hover(
+				function() { 
+					$("audio")[11].play();
+				},
+				function() { 
+					$("audio")[11].pause();
+				}
+			);
+		});
+    });
+ 
  hospital = null;
 // var pacients = [];
 var eleID_h1Titol = document.getElementById("h1TitolHospital");
@@ -53,27 +107,27 @@ function crearHospital() {
   var maximPacients = parseInt(document.getElementById("maximPacientsHospital").value);
 
   if (nom !== "" && maximPacients > 0) {
-      eleID_h1Titol.innerHTML="<h2>Gestió de l'hospital</h2>" + 
-          "<h1><b>" + 
+      eleID_h1Titol.innerHTML="<h2 class='audio_titulo'><span>Gestió de l'hospital</span></h2>" + 
+          "<h1 title='"+nom+"'><b>" + 
           nom + 
           "</b></h1>";
-    debugger;
+
       hospital = new Hospital(nom, maximPacients);
       eleID_divHospital.classList.toggle("d-none");
       var cadenaFilaPacient_1,cadenaFilaPacient_2,cadenaFilaPacient_3;
       cadenaFilaPacient_1 = '<div class="row">' +
                             '<div class="col mb-3">' +
-                            '<label for="nomPacient" class="font-weight-bold"> Nom: </label>' +
+                            '<label for="nomPacient" class="font-weight-bold titol_nom_pacient" title="Nom"> Nom: </label>' +
                             '<input type="text" id="nomPacient';
                             
-      cadenaFilaPacient_2 = '" class="form-control" required minlength="1" maxlength="100" />' +
-                            '  </div> <!-- <div class="col mb-3"> -->' +
+      cadenaFilaPacient_2 = '" class="form-control nom_pacient" required minlength="1" maxlength="100" />' +
+                            '  </div> <div class="col mb-3">' +
                             '  <div class="col mb-3">' +
-                            '    <label for="malaltia" class="font-weight-bold">Malaltia: </label>' +
+                            '    <label for="malaltia" class="font-weight-bold titol_nom_malaltia" title="Malaltia">Malaltia: </label>' +
                             '    <input type="text" id="malaltia';
-      cadenaFilaPacient_3 = '" class="form-control" required minlength="1" maxlength="100" />' +
-                            '  </div> <!-- <div class="col mb-3"> -->' +
-                            '</div> <!-- <div class="row"> -->';
+      cadenaFilaPacient_3 = '" class="form-control nom_malaltia" required minlength="1" maxlength="100" />' +
+                            '  </div> <div class="col mb-3">' +
+                            '</div> <div class="row"> ';
                               
       for (var pacient = 0; pacient < maximPacients; pacient++) {
         document.getElementById("dadesPacient").innerHTML += ( '' +
