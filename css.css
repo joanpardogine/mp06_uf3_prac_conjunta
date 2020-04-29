@@ -9,6 +9,13 @@ box-sizing: border-box;
 width: 100%;
 }
 
+
+body{
+	
+	background-color:#C1F9E4;
+	
+}
+
 .form-control{
 	
 
@@ -80,5 +87,13 @@ padding: 15px;
 
 
 }
+
+
+body{
+	
+	background-color:#DFDFDF;
+	
+}
+
 }
 
