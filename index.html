@@ -2,7 +2,8 @@
 <html lang="ca" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Gestió d'un Hospital</title>
+    <title>Gestió d'Hospitals</title>
+    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
@@ -17,7 +18,10 @@
           <button class="btn btn-secondary mr-2" id="augmentarLletra">🔠 LLETRA +</a>
         </li>
         <li class="nav-item">
-          <button class="btn btn-secondary" id="reduirLletra">🔠 LLETRA -</a>
+          <button class="btn btn-secondary mr-2" id="reduirLletra">🔠 LLETRA -</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-secondary" id="majuscules">🔠 MAJÚSCULES / MINÚSCULES</button>
         </li>
       </ul>
     </nav>
@@ -46,7 +50,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button type="button" onClick="crearHospital()" class="btn btn-primary mt-4" data-toggle="tooltip" title="Fes clic a aquí per guardar les dades de l'Hospital">Crear</button>
+        <button type="button" onClick="crearHospital()" class="btn btn-primary mt-4" data-toggle="tooltip" title="Fes clic a aquí per guardar les dades de l'Hospital">CREAR</button>
       </div>
     </div>
 
@@ -55,7 +59,7 @@
       <p class="text-center">Introdueix les dades del pacients que vols ingressar:</p>
       <div id="dadesPacient"></div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary mt-4" data-toggle="tooltip" title="Fes clic a aquí quan vulguis ingressar els pacients" onClick="ingressarPacients()">Ingressar</button>
+        <button type="button" class="btn btn-primary mt-4" data-toggle="tooltip" title="Fes clic a aquí quan vulguis ingressar els pacients" onClick="ingressarPacients()">INGRESSAR</button>
       </div>
     </div>
 
