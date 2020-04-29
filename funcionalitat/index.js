@@ -60,8 +60,8 @@ if (primerCanviar){
     $("h2").css('color', 'white');
     $("label").css('color', 'white');
     $("body").css('background-color', 'black');
-    $("button").css('background-color', 'black');
-    $("button").css('color', 'white');
+    // $("button").css('background-color', 'black');
+    // $("button").css('color', 'white');
     $("b").css('color', 'white');
     $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
 
@@ -77,8 +77,8 @@ if (primerCanviar){
     $("h2").css('color', 'black');
     $("label").css('color', 'black');
     $("body").css('background-color', 'white');
-    $("button").css('background-color', 'white');
-    $("button").css('color', 'black');
+    // $("button").css('background-color', 'white');
+    // $("button").css('color', 'black');
     $("b").css('color', 'black');
     $( ".navbar " ).removeClass("navbar-dark bg-dark").addClass("navbar-light bg-light");
 
