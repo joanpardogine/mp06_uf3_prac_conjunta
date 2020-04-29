@@ -33,6 +33,45 @@ $(document).ready(function() {
   });
 });
 
+function ingressarPacients() {
+
+  var nom = "";
+  var malaltia = "";
+
+  for (var pacient = 0; pacient < hospital.maximPacients; pacient++) {
+    nom = document.getElementById("nomPacient" + pacient.toString()).value.toString();
+    malaltia = document.getElementById("malaltia" + pacient.toString()).value.toString();
+
+    if (nom !== "" && malaltia !== "") {
+      if (hospital !== null) {
+          hospital.ingressarPacient(new Pacient(nom, malaltia));
+      }
+    }
+  }
+
+  if (hospital !== null && (hospital.pacientsIngressats.length <= hospital.maximPacients)) {
+    eleID_divPacients.classList.toggle("d-none");
+
+    // document.getElementById("nomHospitalGestio").innerHTML = hospital.nomHospital;
+
+    for (var pacient = 0; pacient < hospital.pacientsIngressats.length; pacient++) {
+      document.getElementById("dadesGestio").innerHTML += ('<div class="row" id="dadesGestioPacient' + pacient.toString() + '">' +
+        '<div class="col mb-3">' +
+          '<label for="nomPacientGestio" class="font-weight-bold">Nom: </label>   <p id="nomPacientGestio' + pacient.toString() + '">' + hospital.pacientsIngressats[pacient].nom  + '</p>' +
+        '</div>' +
+        '<div class="col mb-3">' +
+          '<label for="malaltia" class="font-weight-bold">Malaltia: </label>  <p id="malaltiaGestio' + pacient.toString() + '">' + hospital.pacientsIngressats[pacient].malaltia  + '</p>' +
+        '</div>' +
+        '<div class="col mb-3">' +
+          '<button class="btn btn-success" data-toggle="tooltip" title="Fes clic a aquí quan el pacient estigui curat" onClick="gestioDonarDalta(' + pacient + ')">DONAR D\'ALTA</button> <button class="btn btn-danger" data-toggle="tooltip" title="Fes clic a aquí quan el pacient s\'hagi mort" onClick="gestioMorir(' + pacient + ')">MORIR</button>' +
+        '<div class="col mb-3">' +
+      '</div>');
+    }
+    eleID_divGestio.classList.toggle("d-none");
+    // document.getElementById("divGestio").classList.remove("d-none");
+  }
+}
+
  hospital = null;
 // var pacients = [];
 
