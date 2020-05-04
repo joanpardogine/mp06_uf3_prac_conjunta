@@ -164,6 +164,6 @@ setInterval(function(){
 
 }
 
-}, 300);
+  }, 30);
 
 }
