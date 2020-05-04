@@ -1,5 +1,11 @@
 var contraste = true;
 
+
+
+$("#divHospital").addClass("bg-light");
+$('#divHospital').addClass("bg-light");
+$('#divPacients').addClass("bg-light");
+$('#divGestio').addClass("bg-light");
 // if (contraste) {
 //   $('#divHospital').addClass("bg-light");
 //   $('#divPacients').addClass("bg-light");
@@ -68,7 +74,7 @@ function canviarContrast() {
 if (primerCanviar){
 
     $("p").css('color', 'white');
-    // $("h1").css('color', 'white');
+    $("h1").css('color', 'white');
     $("h2").css('color', 'white');
     $("label").css('color', 'white');
     $("body").css('background-color', 'black');
@@ -78,9 +84,9 @@ if (primerCanviar){
     $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
 
     $("#divHospital").removeClass("bg-light").addClass("bg-dark");
-    $('#divHospital').removeClass("bg-ligh").addClass("bg-dark");
-    $('#divPacients').removeClass("bg-ligh").addClass("bg-dark");
-    $('#divGestio').removeClass("bg-ligh").addClass("bg-dark");
+    $('#divHospital').removeClass("bg-light").addClass("bg-dark");
+    $('#divPacients').removeClass("bg-light").addClass("bg-dark");
+    $('#divGestio').removeClass("bg-light").addClass("bg-dark");
 
 
 
@@ -90,7 +96,7 @@ if (primerCanviar){
 }else{
 
     $("p").css('color', 'black');
-    // $("h1").css('color', 'black');
+    $("h1").css('color', 'black');
     $("h2").css('color', 'black');
     $("label").css('color', 'black');
     $("body").css('background-color', 'white');
@@ -101,14 +107,63 @@ if (primerCanviar){
 
     // $("#divHospital").removeClass("bg-dark").addClass("bg-light");
 
-    $("#divHospital").removeClass("bg-dark").addClass("bg-ligh");
-    $('#divHospital').removeClass("bg-dark").addClass("bg-ligh");
-    $('#divPacients').removeClass("bg-dark").addClass("bg-ligh");
-    $('#divGestio').removeClass("bg-dark").addClass("bg-ligh");
+    $("#divHospital").removeClass("bg-dark").addClass("bg-light");
+    $('#divHospital').removeClass("bg-dark").addClass("bg-light");
+    $('#divPacients').removeClass("bg-dark").addClass("bg-light");
+    $('#divGestio').removeClass("bg-dark").addClass("bg-light");
 
 
     contraste = false;
     primerCanviar = true;
 
 }
+
+setInterval(function(){
+    
+  if (!primerCanviar){
+
+    $("p").css('color', 'white');
+    $("h1").css('color', 'white');
+    $("h2").css('color', 'white');
+    $("label").css('color', 'white');
+    $("body").css('background-color', 'black');
+    // $("button").css('background-color', 'black');
+    // $("button").css('color', 'white');
+    $("b").css('color', 'white');
+    $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
+
+    $("#divHospital").removeClass("bg-light").addClass("bg-dark");
+    $('#divHospital').removeClass("bg-light").addClass("bg-dark");
+    $('#divPacients').removeClass("bg-light").addClass("bg-dark");
+    $('#divGestio').removeClass("bg-light").addClass("bg-dark");
+
+
+
+
+
+}else{
+
+    $("p").css('color', 'black');
+    $("h1").css('color', 'black');
+    $("h2").css('color', 'black');
+    $("label").css('color', 'black');
+    $("body").css('background-color', 'white');
+    // $("button").css('background-color', 'white');
+    // $("button").css('color', 'black');
+    $("b").css('color', 'black');
+    $( ".navbar " ).removeClass("navbar-dark bg-dark").addClass("navbar-light bg-light");
+
+    // $("#divHospital").removeClass("bg-dark").addClass("bg-light");
+
+    $("#divHospital").removeClass("bg-dark").addClass("bg-light");
+    $('#divHospital').removeClass("bg-dark").addClass("bg-light");
+    $('#divPacients').removeClass("bg-dark").addClass("bg-light");
+    $('#divGestio').removeClass("bg-dark").addClass("bg-light");
+
+
+
+}
+
+}, 300);
+
 }
