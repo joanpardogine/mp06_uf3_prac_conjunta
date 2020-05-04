@@ -1,3 +1,15 @@
+var contraste = true;
+
+// if (contraste) {
+//   $('#divHospital').addClass("bg-light");
+//   $('#divPacients').addClass("bg-light");
+//   $('#divGestio').addClass("bg-light");
+// }else {
+//   $('#divHospital').addClass("bg-dark");
+//   $('#divPacients').addClass("bg-dark");
+//   $('#divGestio').addClass("bg-dark");
+// }
+
 $( "#btnCrear" ).hover(
   function() {
 $('.btnCrearp').show();
@@ -66,10 +78,13 @@ if (primerCanviar){
     $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
 
     $("#divHospital").removeClass("bg-light").addClass("bg-dark");
+    $('#divHospital').removeClass("bg-ligh").addClass("bg-dark");
+    $('#divPacients').removeClass("bg-ligh").addClass("bg-dark");
+    $('#divGestio').removeClass("bg-ligh").addClass("bg-dark");
 
 
 
-
+    contraste = true;
     primerCanviar = false;
 
 }else{
@@ -84,11 +99,15 @@ if (primerCanviar){
     $("b").css('color', 'black');
     $( ".navbar " ).removeClass("navbar-dark bg-dark").addClass("navbar-light bg-light");
 
-    $("#divHospital").removeClass("bg-dark").addClass("bg-light");
+    // $("#divHospital").removeClass("bg-dark").addClass("bg-light");
+
+    $("#divHospital").removeClass("bg-dark").addClass("bg-ligh");
+    $('#divHospital').removeClass("bg-dark").addClass("bg-ligh");
+    $('#divPacients').removeClass("bg-dark").addClass("bg-ligh");
+    $('#divGestio').removeClass("bg-dark").addClass("bg-ligh");
 
 
-
-
+    contraste = false;
     primerCanviar = true;
 
 }

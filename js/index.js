@@ -129,7 +129,7 @@ function crearHospital() {
     }
     objSelect+='</select>';
 
-    var htmlINICIDivClassRow = '<div class="row">';
+    var htmlINICIDivClassRow = '<div class="row a665684">';
     var htmlFINALDivClassRow =  '</div> <!-- <div class="row"> -->';
     
     var htmlINICIDivClassCol = '<div class="col mb-3">';
