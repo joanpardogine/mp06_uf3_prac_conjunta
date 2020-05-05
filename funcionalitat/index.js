@@ -16,16 +16,30 @@ $('#divGestio').addClass("bg-light");
 //   $('#divGestio').addClass("bg-dark");
 // }
 
-$( "#btnCrear" ).hover(
-  function() {
-$('.btnCrearp').show();
-}
+$("#btnCrear").hover(
+    function() {
+  $('.btnCrearp').show();
+  }
 );
 $( "#divHospital" ).hover(
+    function() {
+  $('.btnCrearp').hide();
+  }
+);
+
+$("#btnIngressar").hover(
   function() {
-$('.btnCrearp').hide();
+$('.btnIngressarp').show();
 }
 );
+$( "#divPacients" ).hover(
+  function() {
+$('.btnIngressarp').hide();
+}
+);
+
+
+
 function textamanyAugmentar() {
 $("label").each(function( index ) {
 textamanyLlabel=$(this).css('font-size');
@@ -88,6 +102,11 @@ if (primerCanviar){
     $('#divPacients').removeClass("bg-light").addClass("bg-dark");
     $('#divGestio').removeClass("bg-light").addClass("bg-dark");
 
+    $('.text-white')
+
+    $('.btnCrearp').removeClass("text-muted").addClass("text-white");
+
+    $('.btnIngressarp').removeClass("text-muted").addClass("text-white");
 
 
     contraste = true;
@@ -112,6 +131,8 @@ if (primerCanviar){
     $('#divPacients').removeClass("bg-dark").addClass("bg-light");
     $('#divGestio').removeClass("bg-dark").addClass("bg-light");
 
+    $('.btnIngressarp').removeClass("text-white").addClass("text-muted");
+    
 
     contraste = false;
     primerCanviar = true;
