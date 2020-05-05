@@ -27,12 +27,12 @@ $('.btnIngressarp').hide();
 }
 );
 
-$("#tractament").hover(
-  function() {
-// $('.tractamentp').show();
-alert('aaaaaa');
-}
-);
+// $("#tractament").hover(
+//   function() {
+// // $('.tractamentp').show();
+// alert('aaaaaa');
+// }
+// );
 // $( "#divGestio" ).hover(
 //   function() {
 // $('.tractamentp').hide();
