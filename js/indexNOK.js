@@ -88,7 +88,7 @@ function gestioDonarDalta(llitPacient) {
   if (totsLlitsBuits())
   dadesGestio.innerHTML = ('<p class="text-center">L\'Hospital ' + hospital.nom + ' no té cap pacient ingressat en aquests moments.</p>' +
   '<div class="text-center">' +
-    '<button type="button" class="btn btn-primary mt-4" onClick="window.location.reload()">Tornar a començar</button>' +
+    '<button type="button" class="btn btn-success mt-4" onClick="window.location.reload()">Tornar a començar</button>' +
   '</div>');
 }
 
@@ -99,7 +99,7 @@ function gestioMorir(llitPacient) {
   if (totsLlitsBuits())
     dadesGestio.innerHTML = ('<p class="text-center">L\'Hospital ' + hospital.nom + ' no té cap pacient ingressat en aquests moments.</p>' +
     '<div class="text-center">' +
-      '<button type="button" class="btn btn-primary mt-4" onClick="window.location.reload()">Tornar a començar</button>' +
+      '<button type="button" class="btn btn-success mt-4" onClick="window.location.reload()">Tornar a començar</button>' +
     '</div>');
 }
 
