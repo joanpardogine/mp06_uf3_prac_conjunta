@@ -1,20 +1,9 @@
 var contraste = true;
-
-
-
 $("#divHospital").addClass("bg-light");
 $('#divHospital').addClass("bg-light");
 $('#divPacients').addClass("bg-light");
 $('#divGestio').addClass("bg-light");
-// if (contraste) {
-//   $('#divHospital').addClass("bg-light");
-//   $('#divPacients').addClass("bg-light");
-//   $('#divGestio').addClass("bg-light");
-// }else {
-//   $('#divHospital').addClass("bg-dark");
-//   $('#divPacients').addClass("bg-dark");
-//   $('#divGestio').addClass("bg-dark");
-// }
+
 
 $("#btnCrear").hover(
     function() {
@@ -51,6 +40,23 @@ textamanyH1=$(this).css('font-size');
 $(this).css('font-size', parseInt(textamanyH1)*1.5+"px");
 });
 
+//prova
+$(".form-control").each(function( index ) {
+  control=$(this).css('font-size');
+  $(this).css('font-size', parseInt(control)*1.5+"px");
+});
+
+$(".btn-success").each(function( index ) {
+  success=$(this).css('font-size');
+  $(this).css('font-size', parseInt(success)*1.5+"px");
+});
+
+$(".btn-danger").each(function( index ) {
+  success=$(this).css('font-size');
+  $(this).css('font-size', parseInt(success)*1.5+"px");
+});
+//prova
+
 $("h2").each(function( index ) {
 textamanyH2=$(this).css('font-size');
 $(this).css('font-size', parseInt(textamanyH2)*1.5+"px");
@@ -73,6 +79,25 @@ textamanyH1=$(this).css('font-size');
 $(this).css('font-size', parseInt(textamanyH1)/1.5+"px");
 });
 
+//prova
+$(".form-control").each(function( index ) {
+  control=$(this).css('font-size');
+  $(this).css('font-size', parseInt(control)/1.5+"px");
+});
+
+$(".btn-success").each(function( index ) {
+  success=$(this).css('font-size');
+  $(this).css('font-size', parseInt(success)/1.5+"px");
+});
+
+$(".btn-danger").each(function( index ) {
+  success=$(this).css('font-size');
+  $(this).css('font-size', parseInt(success)/1.5+"px");
+});
+
+
+//prova
+
 $("h2").each(function( index ) {
 textamanyH2=$(this).css('font-size');
 $(this).css('font-size', parseInt(textamanyH2)/1.5+"px");
@@ -92,8 +117,7 @@ if (primerCanviar){
     $("h2").css('color', 'white');
     $("label").css('color', 'white');
     $("body").css('background-color', 'black');
-    // $("button").css('background-color', 'black');
-    // $("button").css('color', 'white');
+    
     $("b").css('color', 'white');
     $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
 
@@ -119,12 +143,11 @@ if (primerCanviar){
     $("h2").css('color', 'black');
     $("label").css('color', 'black');
     $("body").css('background-color', 'white');
-    // $("button").css('background-color', 'white');
-    // $("button").css('color', 'black');
+
     $("b").css('color', 'black');
     $( ".navbar " ).removeClass("navbar-dark bg-dark").addClass("navbar-light bg-light");
 
-    // $("#divHospital").removeClass("bg-dark").addClass("bg-light");
+
 
     $("#divHospital").removeClass("bg-dark").addClass("bg-light");
     $('#divHospital').removeClass("bg-dark").addClass("bg-light");
@@ -148,8 +171,7 @@ setInterval(function(){
     $("h2").css('color', 'white');
     $("label").css('color', 'white');
     $("body").css('background-color', 'black');
-    // $("button").css('background-color', 'black');
-    // $("button").css('color', 'white');
+
     $("b").css('color', 'white');
     $( ".navbar " ).removeClass("navbar-light").addClass("navbar-dark bg-dark");
 
@@ -169,12 +191,10 @@ setInterval(function(){
     $("h2").css('color', 'black');
     $("label").css('color', 'black');
     $("body").css('background-color', 'white');
-    // $("button").css('background-color', 'white');
-    // $("button").css('color', 'black');
+
     $("b").css('color', 'black');
     $( ".navbar " ).removeClass("navbar-dark bg-dark").addClass("navbar-light bg-light");
 
-    // $("#divHospital").removeClass("bg-dark").addClass("bg-light");
 
     $("#divHospital").removeClass("bg-dark").addClass("bg-light");
     $('#divHospital').removeClass("bg-dark").addClass("bg-light");
