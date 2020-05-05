@@ -5,6 +5,7 @@
     <title>Gestió d'Hospitals</title>
     <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="estils.css" type="text/css">
   </head>
   <body>
   <!-- barra de missatges -->
@@ -17,15 +18,15 @@
     <h1 class="text-center mt-3 mb-3" id="h1TitolHospital">Gestió d'un Hospital</h1>
 
     <div class="w-50 mx-auto align-items-center border border-primary mt-3 mb-3 p-4" id="divHospital">
-      <h2 class="text-center">Hospital</h2>
-      <p class="text-center">Introdueix les dades de l'hospital que vols crear:</p>
+      <h2 class="text-center text" >Hospital</h2>
+      <p class="text-center text">Introdueix les dades de l'hospital que vols crear:</p>
       <div class="form-row mb-3">
         <div class="col">
-          <label for="nomHospital" class="font-weight-bold">Nom: </label>
-<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
+          <label for="nomHospital" class="font-weight-bold text">Nom: </label>
+          <input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
         </div>
         <div class="col">
-          <label for="maximPacients" class="font-weight-bold">Màxim de pacients que pot ingressar: </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
+          <label for="maximPacients" class="font-weight-bold text">Màxim de pacients que pot ingressar: </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
           <!-- onblur="validaQueEsNombre()" -->
         </div>
       </div>
@@ -35,8 +36,8 @@
     </div>
 
     <div class="w-50 mx-auto align-items-center border border-primary p-4 d-none" id="divPacients">
-      <h2 class="text-center">Pacients</h2>
-      <p class="text-center">Introdueix les dades del pacients que vols ingressar:</p>
+      <h2 class="text-center text">Pacients</h2>
+      <p class="text-center text">Introdueix les dades del pacients que vols ingressar:</p>
       <div id="dadesPacient"></div>
       <div class="text-center">
         <button type="button" class="btn btn-primary mt-4" onClick="ingressarPacients()">Ingressar</button>
@@ -45,7 +46,7 @@
 
     <div class="w-75 mx-auto align-items-center border border-primary p-4 d-none" id="divGestio">
       <!-- <h2 class="text-center">Hospital: <span id="nomHospitalGestio"></span></h2> -->
-      <h2 class="text-center">Pacients en tractament:</h2>
+      <h2 class="text-center text">Pacients en tractament:</h2>
       <!-- <p class="text-center">Pacients en tractament:</p> -->
       <div id="dadesGestio"></div>
     </div>
