@@ -2,10 +2,16 @@
 <html lang="ca" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Gestió d'un Hospital Alfons</title>
+    <title>Gestió d'Hospitals</title>
+    <link rel="shortcut icon" href="#" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+     <link rel="stylesheet" type="text/css" href="style/index.css">
+     <script src="style/index.js"></script>
   </head>
-  <body>
+  <body id="Body1">
   <!-- barra de missatges -->
     <div class="text-center alert alert-danger alert-dismissibled d-none" id="barra_missatges">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -13,26 +19,36 @@
         </h3>
     </div>
   <!-- barra de missatges -->
-    <h1 class="text-center mt-3 mb-3" id="h1TitolHospital">Hspital Alfons</h1>
+    <h1 class="text-center mt-3 mb-3" id="h1TitolHospital">Gestió d'un Hospital Alfons</h1>
+    <button type="button" id="contrast" onclick="contrast();" class="btn btn-secondary">Contrast</button>
+    <button type="button" id="contrast1" onclick="contrast1();" class="btn btn-secondary" style="display: none;">Contrast</button>
+    <div id="circle">
+      <div id="box">
+        <div class="caixa" id="divHospital">
 
-    <div class="w-50 mx-auto align-items-center border border-primary mt-3 mb-3 p-4" id="divHospital">
-      <h2 class="text-center">Hospital</h2>
-      <p class="text-center">Introdueix les dades de l'hospital que vols crear:</p>
-      <div class="form-row mb-3">
-        <div class="col">
-          <label for="nomHospital" class="font-weight-bold">Nom: </label>
-<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
-        </div>
-        <div class="col">
-          <label for="maximPacients" class="font-weight-bold">Màxim de pacients que pot ingressar: </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
-          <!-- onblur="validaQueEsNombre()" -->
-        </div>
-      </div>
-      <div class="text-center">
-        <button type="button" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
-      </div>
-    </div>
+			   
+			      <h2 class="text-center">Hospital</h2>
+			      <p class="text-center" id="intro">Introdueix les dades de l'hospital que vols crear:</p>
+			      <div class="form-row mb-3">
 
+			        <div class="col" id="col1In">
+			          <label for="nomHospital" id="nom" class="font-weight-bold">Nom: </label>
+			<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
+			        </div>
+			        <div class="col" id="col2In">
+			          <label for="maximPacients" id="MPacients" class="font-weight-bold">Màxim de pacients : </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
+			          <!-- onblur="validaQueEsNombre()" -->
+			        </div>
+			      </div>
+			      <div class="text-center">
+			        <button type="button" class="btn btn-primary mt-4" id="butCrear" onClick="crearHospital()">Crear</button>
+            		<label id="show" style="display: none; font-weight: bold; font-size: 19pt;"> Crear hospital</label>
+			     
+			  	  </div>
+		</div>
+	  </div>
+	</div>
+<!------------------------------------------------------------------------------------------------------------------>
     <div class="w-50 mx-auto align-items-center border border-primary p-4 d-none" id="divPacients">
       <h2 class="text-center">Pacients</h2>
       <p class="text-center">Introdueix les dades del pacients que vols ingressar:</p>
@@ -49,8 +65,8 @@
       <div id="dadesGestio"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
     <script src="js/classes/hospital.js"></script>

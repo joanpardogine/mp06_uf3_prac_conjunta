@@ -1,0 +1,24 @@
+#box{
+height: auto;
+    padding: 5px;
+    border-radius: 2px;
+    line-height: 20px;
+    box-shadow: 15px;
+}
+
+#circle{
+	width: 65% ;
+    border-radius: 400px ;
+    background-color: none;
+    padding-bottom: 30px;
+    border: 4px solid #4dffff;
+    margin-left: 18%;
+    margin-top: 5%;
+
+}
+.caixa{
+	width: 60%!important;
+    margin-left: 20%!important;
+    margin-top: 1%!important;
+}
+

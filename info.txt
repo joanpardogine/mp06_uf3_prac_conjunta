@@ -1,0 +1,4 @@
+1- Quan es pasa el ratoli sobre els camps pe romplir el tesct s'amplia
+2- passar sobre el text == ampliar.+
+3- Butó contrast
+4- Passar per sobre botó crear hospital-> informa de l'acció
