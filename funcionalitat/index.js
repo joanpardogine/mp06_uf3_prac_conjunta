@@ -27,6 +27,22 @@ $('.btnIngressarp').hide();
 }
 );
 
+$("#tractament").hover(
+  function() {
+// $('.tractamentp').show();
+alert('aaaaaa');
+}
+);
+// $( "#divGestio" ).hover(
+//   function() {
+// $('.tractamentp').hide();
+// alert('asdasdasd');
+
+// }
+// );
+
+
+
 
 
 function textamanyAugmentar() {
