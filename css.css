@@ -1,3 +1,29 @@
 #h1TitolHospital{
     font-size: 30px;
+    color: blue;
+    text-decoration: underline;
+}
+
+#divHospital{
+    background-color: lightgrey;
+}
+
+#hospi{
+    color: blue;
+}
+
+#nommaxim{
+    color: blue;
+}
+
+.fons{
+    background-color: antiquewhite;
+}
+
+#divPacients{
+    background-color: lightgrey;
+}
+
+#divGestio{
+background-color: lightgrey;
 }
