@@ -14,7 +14,7 @@ function validaQueNoEsBuit(cadenaAValidar) {
 alert("hola");
   // Get the value of the input field with id="numb"
   //x = document.getElementById("numb").value;
-
+ytryrtytrytr
   // If x is Not a Number or less than one or greater than 10
   if (cadenaAValidar=="") {
     alert("és buit!");
