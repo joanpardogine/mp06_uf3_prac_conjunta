@@ -20,6 +20,7 @@
 
       #divHospital, #divHospital, #divPacients, #divGestio{
 
+        
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
       }
@@ -34,11 +35,26 @@
         position: absolute !important;
         bottom: 0%;
         width: 100%;
+
       }
 
       .logoGine{
-        width: 8%;
+        width: 4%;
         padding: 10px;
+      }
+
+      footer{
+        font-size: 6pt;
+      }
+
+      .llistamilloraTitul{
+        font-size: 11pt !important;
+      }
+
+      .llistamillora{
+        width: 20%;
+        font-size: 10pt !important;
+       
       }
 
 
@@ -74,13 +90,13 @@
   <!-- barra de missatges -->
     <h1 class="text-center mt-3 mb-3" id="h1TitolHospital">Gestió d'un Hospital</h1>
 
-    <div class="w-50 mx-auto align-items-center container border-primary rounded mt-3 mb-3 p-4" id="divHospital">
+    <div class="w-100 mx-auto align-items-center container border-primary rounded mt-3 mb-3 p-4" id="divHospital">
       <h2 class="text-center">Hospital</h2>
       <p class="text-center">Introdueix les dades de l'hospital que vols crear:</p>
       <div class="form-row mb-3">
         <div class="col">
           <label for="nomHospital" class="font-weight-bold">Nom: </label>
-<input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
+        <input type="text" id="nomHospital" class="form-control" required minlength="1" maxlength="100" value="General de Catalunya" onblur="validaQueNoEsBuit(this.value.nomHospital)" />
         </div>
         <div class="col">
           <label for="maximPacients" class="font-weight-bold">Màxim de pacients que pot ingressar: </label>  <input type="number" id="maximPacientsHospital" class="form-control" required min="0" max="100" value="2" />
@@ -96,7 +112,7 @@
       </div>
     </div>
 
-    <div class="w-50 mx-auto align-items-center container border-success rounded mt-3 mb-3 p-4 d-none" id="divPacients">
+    <div class="w-100 mx-auto align-items-center container border-success rounded mt-3 mb-3 p-4 d-none" id="divPacients">
       <h2 class="text-center">Pacients</h2>
       <p class="text-center">Introdueix les dades del pacients que vols ingressar:</p>
       <div id="dadesPacient"></div>
@@ -109,7 +125,7 @@
       </div>
     </div>
 
-    <div class="w-50 mx-auto align-items-center container border-success rounded mt-3 mb-3 p-4 d-none" id="divGestio">
+    <div class="w-100 mx-auto align-items-center container border-success rounded mt-3 mb-3 p-4 d-none" id="divGestio">
       <!-- <h2 class="text-center">Hospital: <span id="nomHospitalGestio"></span></h2> -->
       <h2 class="text-center">Pacients en tractament:</h2>
       <!-- <p class="text-center">Pacients en tractament:</p> -->
@@ -122,18 +138,59 @@
 
     <script src="js/classes/hospital.js"></script>
     <script src="js/index.js"></script>
-
+<!-- 
     <div class="card">
       <div class="card-header">
-        Arnau Carrasco Millora Hospital M8 - M9
+       <label>Arnau Carrasco Millora Hospital M8 - M9</label> 
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
-          <img class="logoGine" src="img/gine.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+<center>
+
+
+  <h1 class="llistamilloraTitul">Millores realitzades:</h1>
+<ul class="list-group list-group-flush llistamillora">
+  <li class="list-group-item">Nou panell per controlar la mida del text.</li>
+  <li class="list-group-item">Nou panell per controlar el contrast.</li>
+  <li class="list-group-item">Canvis en l'àmbit de colors imatge de fons i petits detalls.</li>
+  <li class="list-group-item">Nou Footer.</li>
+
+</ul>
+<img class="logoGine" src="img/gine.png" alt="">
+<footer>-© Arnau Carrasco-</footer>
+</center>
+
+
         </blockquote>
       </div>
-    </div>
+    </div> -->
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Arnau Carrasco Millora Hospital M8 - M9 <img src="img/expand_more-24px.svg" alt="">           
+            </button>
+          </h2>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <center>
+              <h4>Millores realitzades:</h4>
+            <ul class="list-group list-group-flush llistamillora">
+              <li class="list-group-item">Nou panell per controlar la mida del text.</li>
+              <li class="list-group-item">Nou panell per controlar el contrast.</li>
+              <li class="list-group-item">Canvis en l'àmbit de colors imatge de fons i petits detalls.</li>
+              <li class="list-group-item">Nou Footer.</li>
+            </ul>
+            <img class="logoGine" src="img/gine.png" alt="">
+            <footer>-© Arnau Carrasco-</footer>
+            </center>
+          </div>
+        </div>
+      </div>
+    
   </body>
 </html>

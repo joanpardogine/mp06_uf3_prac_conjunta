@@ -71,6 +71,22 @@ $(".btn-danger").each(function( index ) {
   success=$(this).css('font-size');
   $(this).css('font-size', parseInt(success)*1.5+"px");
 });
+
+$("h4").each(function( index ) {
+  textamanyh4=$(this).css('font-size');
+  $(this).css('font-size', parseInt(textamanyh4)*1.5+"px");
+});
+
+$("li").each(function( index ) {
+  lista=$(this).css('font-size');
+  $(this).css('font-size', parseInt(lista)*1.5+"px");
+});
+
+$("footer").each(function( index ) {
+  footer=$(this).css('font-size');
+  $(this).css('font-size', parseInt(footer)*1.5+"px");
+});
+
 //prova
 
 $("h2").each(function( index ) {
@@ -109,6 +125,21 @@ $(".btn-success").each(function( index ) {
 $(".btn-danger").each(function( index ) {
   success=$(this).css('font-size');
   $(this).css('font-size', parseInt(success)/1.5+"px");
+});
+
+$("h4").each(function( index ) {
+  textamanyh4=$(this).css('font-size');
+  $(this).css('font-size', parseInt(textamanyh4)/1.5+"px");
+});
+
+$("li").each(function( index ) {
+  lista=$(this).css('font-size');
+  $(this).css('font-size', parseInt(lista)/1.5+"px");
+});
+
+$("footer").each(function( index ) {
+  footer=$(this).css('font-size');
+  $(this).css('font-size', parseInt(footer)/1.5+"px");
 });
 
 
