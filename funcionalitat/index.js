@@ -215,6 +215,7 @@ setInterval(function(){
 
     $("p").css('color', 'white');
     $("h1").css('color', 'white');
+    $("h4").css('color', 'white');
     $("h2").css('color', 'white');
     $("label").css('color', 'white');
     $("body").css('background-color', 'black');
@@ -227,7 +228,8 @@ setInterval(function(){
     $('#divPacients').removeClass("bg-light").addClass("bg-dark");
     $('#divGestio').removeClass("bg-light").addClass("bg-dark");
 
-
+    $('.card').addClass("bg-dark");
+    $('footer').addClass("bg-dark");
 
 
 
@@ -236,6 +238,7 @@ setInterval(function(){
     $("p").css('color', 'black');
     $("h1").css('color', 'black');
     $("h2").css('color', 'black');
+    $("h4").css('color', 'black');
     $("label").css('color', 'black');
     $("body").css('background-color', 'white');
 
@@ -248,6 +251,8 @@ setInterval(function(){
     $('#divPacients').removeClass("bg-dark").addClass("bg-light");
     $('#divGestio').removeClass("bg-dark").addClass("bg-light");
 
+    $('.card').removeClass("bg-dark");
+    $('footer').removeClass("bg-dark");
 
 
 }
